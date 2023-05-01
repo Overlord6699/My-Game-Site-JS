@@ -1,0 +1,39 @@
+{% extends "slider/slider_simple_slide.twig" %}
+
+
+{% block picture %}
+<img class='slider_picture' src='/assets/pictures/{{enemy_pict}}' alt="">
+{% endblock %}
+
+{% block name %}
+ <div class='enemy_name'>
+        <h4 class='enemy_name_text'>{{enemy_name}}</h4>
+    </div>
+{% endblock %}
+
+{% block description %}
+{{parent()}}
+{% endblock %}
+
+{% block animations %}
+<div class='enemy_anim_container'>
+    <ul>
+        <li>
+            <div class='enemy_anim_background'>
+                <img class='enemy_anim' src='/assets/pictures/gifs/{{enemy_gif1}}' alt="">
+            </div>
+
+        </li>
+        <li>
+            <div class='enemy_anim_background'>
+                <img class='enemy_anim' src='/assets/pictures/gifs/{{enemy_gif2}}' alt="">
+            </div>
+        </li>
+        <li>
+            <div class='enemy_anim_background'>
+                <img class='enemy_anim' src='/assets/pictures/gifs/{{enemy_gif3}}' alt="">
+            </div>
+        </li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!-- <base href="https://overlord6699.github.io/My-Game-Site"> -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <link rel='shortcut icon' href='/assets/pictures/icons/chest.png' type='image/x-icon'>
+
+
+    <link rel='stylesheet' href='/assets/styles/fonts.css'>
+    <link rel="stylesheet" href='/assets/styles/header.css'>
+    <link rel="stylesheet" href='/assets/styles/shop.css'>
+     <link rel="stylesheet" href='/assets/styles/footer.css'>
+
+    <title>{{page_name}}</title>
+</head>
+
+<body>
+    {% include "blocks/shop_header.twig" with  {
+        user: user,
+        busket_products: products,
+    }
+    %}
+
+    <main>
+        <section class="page page-1">
+         
+            <div class="search_container">
+                <img class='search_pict pointer' src='/assets/pictures/icons/search.png' alt='Поиск'></img>
+
+                <input class='search_text' name='search' id="search" placeholder='Что потерял?' spellchek="false">
+            </div>
+
+            {% include 'blocks/shop_category.twig' with  {
+                category_name: 'Питомцы',
+                category_DBname: 'pet',
+            }
+            %}
+
+            <ul class='products'>            
+            {% for product in products %}
+                {% if product.category == 'pet' %}
+                <li>
+                    {% include 'blocks/shop_card.twig' with  {
+                    card_name: product.title,
+                    card_back_pict: 'сетка.png',
+                    card_pict: product.image_path,
+                    card_url: product.url_key,
+                    card_category: product.category,
+                    }
+                    %}
+                </li>
+                {% endif %}
+            {% endfor %}        
+            </ul>
+        </section>
+
+        <section class="page page-2">
+            {% include 'blocks/shop_category.twig' with  {
+            category_name: 'Оружие',
+            category_DBname: 'weapon',
+            }
+            %}
+
+            <ul class="products">
+
+                {% for product in products %}
+                    {% if product.category == 'weapon' %}
+                    <li>
+                        {% include 'blocks/shop_volume_card.twig' with  {               
+                        card_name: product.title,
+                        card_back_pict: 'сетка.png',
+                        card_pict: product.image_path,
+                        card_url: product.url_key,
+                        card_category: product.category,
+                        }
+                        %}
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    {% include "blocks/footer.twig" %}
+
+    {% include "blocks/common_scripts.twig" %}
+
+    <script src='../assets/js/busket_burger.js'></script>
+    <script src='../assets/js/search.js'></script>
+</body>
+
+</html>

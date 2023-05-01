@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.link {
+    position: absolute;
+}
+
+main {
+    background-image: url('../pictures/background/fon.png');
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-color: #000000;
+}
+
+
+.page {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.page-1 {
+    flex-direction: column;
+}
+
+.post_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+
+    margin-top: 7%;
+
+    max-width: 1500px;
+    height: 100%;
+    width: 100%;
+}
+
+.post_id_container {
+    align-self: flex-start;
+}
+
+.post_id_text {
+    text-align: center;
+
+    font-family: 'Pixeloid Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 62px;
+    letter-spacing: 0.19em;
+
+    color: #BDD1D1;
+}
+
+.section_underline {
+    position: relative;
+    background-color: #BDD1D1;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+
+    opacity: 0.6;
+}
+
+.post_date_container {
+    align-self: flex-start;
+
+    margin-top: 1%;
+}
+
+.post_date_text {
+    text-align: center;
+
+    font-family: 'Pixeloid Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 37px;
+    letter-spacing: 0.19em;
+
+    color: #BDD1D1;
+}
+
+.post_content_container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 2%;
+}
+
+.post_content_text {
+    text-align: center;
+
+    font-family: 'Pixeloid Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 62px;
+    letter-spacing: 0.085em;
+
+    color: #BDD1D1;
+    opacity: 0.9;
+}
+
+.intext_image {
+    align-self: center;
+
+    max-height: 400px;
+    max-width: 600px;
+    width: 100%;
+
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    object-fit: cover;
+}

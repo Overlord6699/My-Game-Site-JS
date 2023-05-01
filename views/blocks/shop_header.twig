@@ -1,0 +1,26 @@
+{% extends "blocks/header.twig" %}
+
+{% block busket %}
+
+<!-- встраивается иконка корзинки -->
+<div class="busket_container burger">
+    <img class="busket_picture" src='/assets/pictures/icons/IconBasket.png' alt=""></img>
+
+    <ul class="busket_products burger-panel">
+        {% for product in busket_products %}
+        <li>
+            {% include "blocks/shop_card.twig" with {
+                card_name: product.title,
+                card_back_pict: '../assets/pictures/shop/card/сетка.png',
+                card_pict: product.image_path,
+                card_url: product.url_key,
+                card_category: product.category,
+            }
+            %}
+        </li>
+        {% endfor %}
+    </ul>       
+</div>
+
+
+{% endblock %}  

@@ -1,0 +1,830 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slider_picture {
+  max-width: 779px;
+  max-height: 373px;
+
+  width: 100%;
+
+  object-fit: cover;
+}
+
+.weapon_slider_picture {
+  max-width: 779px;
+  max-height: 440px;
+
+  width: 100%;
+  height: 50vmin;
+
+  object-fit: contain;
+}
+
+.slide_button {
+  max-width: 10vw;
+  max-height: 8vh;
+
+  width: 100%;
+  height: 100%;
+  margin-left: 3%;
+  margin-right: 3%;
+
+  top: 30%;
+}
+
+.slide_button img {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  line-height: 1;
+}
+
+
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: '';
+}
+
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: '';
+}
+
+.finish_line {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.main__swiper_left::after {
+  display: none;
+}
+
+.swiper-slide-active {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: #fff;
+}
+
+.page {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page-1 {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-2 {
+  align-items: center;
+}
+
+.page-2_content {
+  align-self: flex-start;
+  flex-direction: row;
+
+  max-width: 1760px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-3 {
+  align-items: center;
+
+  min-width: 0;
+}
+
+.page-3_content {
+  align-self: flex-start;
+  min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 1760px;
+}
+
+.page-4 {
+  align-items: center;
+
+  min-width: 0;
+}
+
+.page-4_content {
+  align-self: flex-start;
+  min-width: 0;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1760px;
+}
+
+.page-5 {
+  align-items: center;
+}
+
+.page-5_content {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.weapon_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enemy_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 60%;
+  height: 80%;
+}
+
+.slider_content {
+  margin-top: 7%;
+}
+
+.enemy_anim_container {
+  display: flex;
+  justify-content: center;
+}
+
+.enemy_anim_container ul {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  justify-content: center;
+
+}
+
+.enemy_anim_container ul li {
+  list-style: none;
+  display: flex;
+
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.enemy_anim {
+  position: relative;
+
+  left: 15%;
+  top: 15%;
+  width: 100%;
+  height: 100%;
+}
+
+.enemy_anim_background {
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+
+  background: linear-gradient(90deg, #1F1C2C 0%, #928DAB 100%);
+
+  /*opacity: 0.2;*/
+}
+
+.portal_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  margin: auto;
+  width: 60%;
+  height: 60%;
+}
+
+.play_button_container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  width: 30%;
+
+  cursor: pointer;
+}
+
+.play_button_image {
+  width: 100%;
+}
+
+.play_button_container:hover {
+  opacity: 0.5;
+}
+
+.play_button_text {
+  position: absolute;
+
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(10px + 30*(100vw/1960));
+  line-height: 43px;
+  text-align: center;
+  letter-spacing: 0.18em;
+
+  color: #4A708E;
+}
+
+.about_enemy {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+
+}
+
+.about_enemy_text {
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(15px + 20*(100vw/1960));
+  line-height: 60px;
+
+  text-align: center;
+  letter-spacing: 0.085em;
+
+  color: #BDD1D1;
+}
+
+.enemy_info_slider {
+  display: flex;
+}
+
+.enemy_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.enemy_name {
+  display: flex;
+  justify-content: center;
+
+  max-width: 779px;
+  height: 10vmin;
+  width: 100%;
+
+  background-color: #151A19;
+}
+
+.weapon_name {
+  display: flex;
+  justify-content: center;
+
+  max-width: 400px;
+  height: 10vmin;
+
+  width: 100%;
+
+  background-color: #151A19;
+}
+
+.enemy_name_text {
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-size: calc(15px + 25*(100vw/1960));
+
+  margin: auto;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+.portal_anim {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container {
+  margin-top: 30px;
+  align-items: center;
+}
+
+
+.about_game_start {
+  display: flex;
+
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.about_game_img {
+  min-width: 20%;
+
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.about_game h2 {
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-size: calc(15px + 20*(100vw/1960));
+
+  margin-top: 8%;
+  text-align: center;
+
+  color: #4A708E;
+}
+
+.about_game_text_container {
+  display: flex;
+  margin-top: 5%;
+}
+
+.about_game_text {
+  margin: auto auto;
+  text-align: center;
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(10px + 20*(100vw/1960));
+  line-height: 200%;
+  letter-spacing: 0.085em;
+
+  padding: 20px;
+  max-width: 100%;
+  max-height: 100%;
+
+  color: #BDD1D1;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+main {
+  background-image: url('../pictures/background/fon.png');
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-color: #000000;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+
+.game_name_text {
+  margin-left: 5%;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-size: calc(10px + 20*(100vw/1960));
+  line-height: 200%;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #4A708E;
+  overflow: hidden;
+}
+
+.main_picture {
+  width: 60%;
+  margin-right: 5%;
+}
+
+
+
+.trailer_text_container {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  margin-top: 10%;
+}
+
+.trailer_text {
+
+
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(20px + 30*(100vw/1960));
+  line-height: 62px;
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  color: #BDD1D1;
+}
+
+.video_container {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 5%;
+}
+
+.video_container video {
+  position: absolute;
+  display: none;
+
+  width: 56%;
+  height: 100%;
+
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.video_container video.active {
+  display: block;
+  z-index: 100;
+}
+
+
+
+
+
+.video_preview {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.video-play-button {
+  position: absolute;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+
+  width: 0px;
+  height: 0px;
+}
+
+.video-play-button img {
+  width: 10vw;
+  opacity: 0.8;
+
+  cursor: pointer;
+}
+
+.video-play-button img:hover {
+  opacity: 1;
+}
+
+
+figure {
+  z-index: 10;
+  width: 55%;
+  height: 100%;
+}
+
+figure img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.authorize {
+  list-style: none;
+}
+
+.question_form_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin-bottom: 8%;
+}
+
+.question_form::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+
+  background: url('../pictures/gifs/portal.gif') center/50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.question_form._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+form * {
+  outline: none;
+}
+
+.form_input:focus {
+  box-shadow: 0 0 20px #98ad8c;
+}
+
+.question_text_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.question_text {
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(20px + 30*(100vw/1960));
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  color: #BDD1D1;
+}
+
+.question_form {
+
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 3%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.question_form input {
+
+  height: 7vh;
+  width: 25vmax;
+
+  border: none;
+  padding-left: 15px;
+  border: 4px solid #BDD1D1;
+  background-color: #000000;
+
+
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-weight: 800;
+  font-size: calc(8px + 15*(100vw/1960));
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #BDD1D1;
+}
+
+.row_form input:focus {
+  border: 2px solid #6c00ff;
+}
+
+.question_form .button {
+  cursor: pointer;
+  text-transform: uppercase;
+
+  margin-left: 1%;
+  /*width: 12vmax;*/
+
+  font-size: calc(10px + 15*(100vw/1960));
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  color: #BDD1D1;
+  opacity: 0.8;
+}
+
+.question_form .button:focus {
+  transform: none;
+}
+
+.question_form .button:hover {
+  opacity: .80;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.question_info {
+  margin-top: 3%;
+  padding: 1%;
+
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(10px + 15*(100vw/1960));
+  line-height: 110%;
+  text-align: center;
+  letter-spacing: 0.05em;
+
+
+  color: #BDD1D1;
+}
+
+
+
+.title {
+  display: flex;
+  padding: 20px;
+}
+
+
+.shining-text {
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+
+  animation: animate 3s linear infinite;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trapezoid_container {
+  margin-top: 12%;
+  width: 100%;
+}
+
+.trapezoid_text_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 1%;
+
+  width: 100%;
+}
+
+.trapezoid_text {
+  position: absolute;
+  margin-top: 8%;
+
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(13px + 40*(100vw/1960));
+  line-height: 62px;
+  text-align: center;
+  letter-spacing: 0.18em;
+
+  color: #4A708E;
+}
+
+.row_form {
+  display: flex;
+  flex-direction: row;
+
+  gap: 2%;
+}
+
+.checkbox_container {
+  display: flex;
+
+  margin-top: 2%;
+}
+
+input[type="checkbox"] {
+  width: 2vw;
+  height: 2vw;
+
+  display: none;
+}
+
+input[type="checkbox"]:checked+.checkbox_label::after {
+  transform: scale(1);
+}
+
+.checkbox_label {
+  display: flex;
+  align-items: center;
+
+  margin-left: 10px;
+
+  font-family: 'Pixeloid Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(10px + 15*(100vw/1960));
+  line-height: 110%;
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  color: #BDD1D1;
+  cursor: pointer;
+}
+
+.checkbox_label::before {
+  content: "";
+
+  border-radius: 4px;
+  align-self: flex-start;
+
+  height: 2vw;
+  width: 2vw;
+  margin-right: 10px;
+
+  background-color: #fff;
+}
+
+.checkbox_label::after {
+  transition: transform 0.5s ease 0s;
+  content: "";
+  position: absolute;
+
+  height: 1.6vw;
+  width: 1.6vw;
+  margin-left: 0.2vw;
+
+  background-color: #6c00ff;
+  border-radius: 4px;
+  transform: scale(0);
+}
+
+
+@keyframes animate {
+  0% {
+    background-position: -700%;
+  }
+
+  100% {
+    background-position: 700%;
+  }
+}
+
+@media(max-width:1068px) {
+  .page {
+    min-height: 0%;
+  }
+}
+
+@media(max-width: 767px) {
+
+
+
+  /* шрифты */
+  .game_name_text {
+    font-size: calc(15px+(20 + 20 * 0.7)*((100vw-320px)/1920));
+  }
+
+  .trapezoid_text {
+    font-size: calc(13px + (40+40*0.7)*(100vw/1960));
+  }
+
+  /* -шрифты- */
+  .row_form {
+    display: grid;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .section {
+    max-width: 70%;
+  }
+
+  .question_form input {
+    width: 50vw;
+    height: 2vh;
+
+    border: 2px solid #BDD1D1;
+  }
+
+  .question_form .button {
+    margin-left: 0%;
+    height: 4vh;
+  }
+
+
+}
+
+@media(max-width: 1920px) {
+  .trapezoid_text {
+    margin-top: 11%;
+  }
+}

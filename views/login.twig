@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <link rel='shortcut icon' href='/assets/pictures/icons/chest.png' type='image/x-icon'>
+
+
+    <link rel="stylesheet" href='/assets/styles/header.css'>
+    <link rel="stylesheet" href='/assets/styles/footer.css'>
+    <link rel="stylesheet" href='/assets/styles/login.css'>
+    <link rel='stylesheet' href='/assets/styles/fonts.css'>
+
+    <title>{{page_name}}</title>
+</head>
+
+<body>
+    {% include "blocks/header.twig" with {
+        user : user
+    } 
+    %}
+
+    <main>
+
+        <h1 id="alert" role="alert">{{message}}</h1>
+
+        <form name="logForm">
+            <div class="form_group">
+                <label for="email">Ваш Email</label>
+                <input type="text" name="email" class="form_control" id="email" placeholder="Введите Email"
+                     value="{{ form_data ? form_data.email }}" required/>             
+            </div>
+
+            <div class="form_group">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" class="form_control" id="password"
+                    placeholder="Введите пароль" value="" required/>
+            </div>
+            <button type="submit" class="login_btn btn">Войти</button>
+        </form>
+        
+        <p class="register_text">Или вы можете</p>
+
+        <a class="text_link" href="register">Зарегистрироваться</a>
+    </main>
+
+    {% include "blocks/footer.twig" %}
+
+    {% include "blocks/common_scripts.twig" %}
+
+   <script src="../assets/js/checkers/loginChecker.js"></script>
+ 
+</body>
+
+</html>

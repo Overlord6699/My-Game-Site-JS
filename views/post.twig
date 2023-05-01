@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <base href="https://overlord6699.github.io/My-Game-Site"> -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <link rel='shortcut icon' href='/assets/pictures/icons/chest.png' type='image/x-icon'>
+
+
+    <link rel="stylesheet" href='/assets/styles/header.css'>
+
+
+    <link rel="stylesheet" href='/assets/styles/footer.css'>
+
+
+    
+    <link rel="stylesheet" href='/assets/styles/post.css'>
+    <link rel='stylesheet' href='/assets/styles/fonts.css'>
+
+
+    <title>{{page_name}}</title>
+</head>
+
+<body>
+    {% include "blocks/header.twig" with {
+        user: {{user}}
+    }
+    %}
+
+    <main>
+        <section class='page page-1'>
+            <div class="post_container">
+
+                <div class="post_id_container">
+                    <h1 class='post_id_text'>
+                        Новость {{post.post_id}}
+                    </h1>
+
+                    <div class="section_underline"></div>
+                </div>
+
+                <div class='post_date_container'>
+                    <h2 class='post_date_text'>
+                        {{post.published_date}}
+                    </h2>
+                </div>
+
+                <div class="post_content_container">
+                    <p class="post_content_text">
+                       {{post.content}}
+                       
+                    </p>
+                    <img class="intext_image" src="/assets/pictures/news/{{post.image_path|raw}}" alt="{{post.title}}"></img>
+                    
+                </div>
+
+
+
+            </div>
+        </section>
+    </main>
+
+    {% include "blocks/footer.twig" %}
+
+    {% include "blocks/common_scripts.twig" %}
+</body>
+
+</html>

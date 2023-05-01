@@ -1,0 +1,49 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "server": "nodemon app",
+    "client-install": "npm install --prefix client",
+    "client": "npm run start --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Overlord6699/My-Game-Site-JS.git"
+  },
+  "author": "Overlord6699",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Overlord6699/My-Game-Site-JS/issues"
+  },
+  "homepage": "https://github.com/Overlord6699/My-Game-Site-JS#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "browser-sync": "^2.29.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.2.4",
+    "node": "^17.9.1",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.31.0",
+    "twig": "^1.16.0",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}

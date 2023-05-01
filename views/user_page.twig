@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <base href="https://overlord6699.github.io/My-Game-Site"> -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <link rel='shortcut icon' href='/assets/pictures/icons/chest.png' type='image/x-icon'>
+
+
+    
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> 
+    <link rel='stylesheet' href='/assets/styles/fonts.css'>
+
+    <link rel="stylesheet" href='/assets/styles/header.css'>
+    <link rel="stylesheet" href='/assets/styles/user_header.css'>
+    <link rel="stylesheet" href='/assets/styles/footer.css'>
+    <link rel="stylesheet" href='/assets/styles/userPage.css'>
+
+    <title>{{page_name}}</title>
+</head>
+
+<body>
+    {% include "blocks/header.twig" with   {
+        user: user
+    }
+    %}
+
+    <main>
+        <section class="page page-1">
+            <div class="page_content">
+                <div class="user_container">
+                    <figure class="user_image_container">
+                        <img class="user_image" src='assets/pictures/account/entry.png' alt=""></img>
+                    </figure>
+
+                    <div class="edit_user_panel">
+                        <h2 class="choose_icon_text">Выберите аватарку:</h2>
+                        
+                        <ul class="user_icons">
+                            <li>
+                                <img class="user_icon" src='assets/pictures/icons/entry.png' 
+                                alt="Аватарка"></img>
+                            </li>
+
+                            <li>
+                                <img class="user_icon" src='assets/pictures/icons/entry.png' 
+                                alt="Аватарка"></img>
+                            </li>
+
+                            <li>
+                                <img class="user_icon" src='assets/pictures/icons/chest.png'
+                                alt="Аватарка"></img>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <figcaption class="user_name_container">
+                        <h2 class="user_name_text">{{user.username}}</h2>
+                    </figcaption>
+
+                    <div class="edit_user_button">
+                        <h3 class="edit_user_text">
+                            <span>Редактировать профиль</span>
+                        </h3>
+                    </div> 
+                </div>
+
+                <div class="user_info_container">
+
+                    {% include "blocks/user_header.twig" %}
+
+                    <div class="categories">
+                        {% include "blocks/busket_category.twig" with  {
+                            category_img: "pow.png",
+                            category_name: "Питомцы"
+                        } 
+                        %}
+
+                        {% include "blocks/busket_category.twig" with  {
+                            category_img: "sword.png",
+                            category_name: "Оружие"
+                        } 
+                        %}            
+                    </div>
+
+                    <div class="section_underline">
+                    </div>
+
+                    <div class="last_products">
+                        <div class="last_products_container">
+                            <h2 class="last_products_text">Последние покупки</h2>
+                        </div>
+
+                        <div class='image-slider swiper-container'>
+                            <div class='swiper-wrapper'>                         
+                                {% include "blocks/last_product.twig" with {
+                                    product_img: "pet/cat.png",
+                                    product_name: "Котик",
+                                } %}
+
+                                {% include "blocks/last_product.twig" with {
+                                    product_img: "pet/leaf.png",
+                                    product_name: "Листикfghfghfgh",
+                                } %}
+                                
+                                {% include "blocks/last_product.twig" with {
+                                    product_img: "pet/leaf.png",
+                                    product_name: "Листик",
+                                } %}
+
+                                {% include "blocks/last_product.twig" with {
+                                    product_img: "pet/leaf.png",
+                                    product_name: "Листик",
+                                } %}
+
+                                {% include "blocks/last_product.twig" with {
+                                    product_img: "pet/leaf.png",
+                                    product_name: "Листик",
+                                } %}
+
+                                {% include "blocks/last_product.twig" with {
+                                    product_img: "pet/leaf.png",
+                                    product_name: "Листик",
+                                } %}
+
+
+
+                                {%
+                                include 'blocks/arrows.twig' with  {
+                                left_arrow_pict: 'left_arrow.png',
+                                right_arrow_pict : 'right_arrow.png'
+                                }
+                                %}
+                            </div>
+                        </div>      
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+    {% include "blocks/footer.twig" %}
+
+
+    {% include "blocks/common_scripts.twig" %}
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src='/assets/js/slider/slider.js'></script>
+
+    <script src='/assets/js/chooseAvatar.js'></script>
+ 
+</body>
+
+</html>

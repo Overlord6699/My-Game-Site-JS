@@ -1,0 +1,41 @@
+<div class="product_info_container">
+    <div class="product_name_container">
+        <p class="product_name_text">{{product_title}}</p>
+    </div>
+
+    <div class="product_info_box">
+        <div class="pict_with_price">
+            <figure class='product_pict_container'>
+                <img class='product_picture' src="/assets/pictures/shop/{{product_category}}/{{product_pict}}"
+                    alt=""></img>
+            </figure>
+            <figcaption class="product_price">
+                <p class="product_price_text">${{product_price}}</p>
+            </figcaption>
+        </div>
+
+
+        <alongside class="product_info">
+            <div class='product_description_container'>
+                <p class="product_description_text">
+                    {{product_description}}
+                </p>
+            </div>
+
+            <div class="product_features">
+                <p class="product_features_text">
+                    ОСОБЕННОСТИ: {{product_features}}
+                </p>
+            </div>
+
+            <div class="like_product_container">
+                <div class='like_product'>
+                    <div id="#like" class="like_product_img icon-heart-outline"></div>
+                </div>
+
+
+                <label for="like" class="like_product_text">Добавить в корзину</label>
+            </div>
+        </alongside>
+    </div>
+</div>

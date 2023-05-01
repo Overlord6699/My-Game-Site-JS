@@ -1,0 +1,65 @@
+<!--оболочка шапки -->
+<div class='wrapper'>
+    <header id='header' class='header lock-padding flex'>
+        <div class='navbar'>
+            <div class='left_header'>
+                <img class='nav_icon' src='/assets/pictures/icons/header_icon.png' alt="">
+
+                <div class='menu_container burger-panel'>
+                    <nav>
+                        <ul class='menu'>
+                            <li class='selected_line'><a href='/' data-text='Главная'>Главная</a></li>
+                            <li><a href='/news' data-text='Новости'>Новости</a></li>
+                            <li><a href='/shop' data-text='Магазин'>Магазин</a></li>
+                            <!--
+                        <div class='authorize'>
+                            <li><a href='#pop_up' class='pop_up_open_button pop_up-link'>Войти</a></li>
+                        </div>-->
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+
+            {% block right_header %}
+                <div class="right_header">
+                    <div class='header_burger burger'>
+                        <span>
+                        </span>
+                    </div>
+
+                    {% block busket %}
+                    {% endblock %}
+
+                    <div class='entry_icon_burger'>      
+                        <a class='login_link burger' href="#">
+                            {% if (user != null) %}
+                                <img class='nav_icon_login' src='/assets/pictures/icons/entry.png' alt=""></img>
+                            {% else %}
+                                <img class='nav_icon_login' src='/assets/pictures/icons/noEntry.png' alt=""></img>
+                            {% endif %}
+                        </a>   
+
+                        <ul class="menu_list burger-panel">
+                            <li>
+                                {% if (user == null) %}
+                                <a href='/login' class="menu_link">Личный кабинет</a>
+                                {% else %}
+                                <a href='/account' class="menu_link">Личный кабинет</a>
+                                {% endif %}
+                            </li>
+
+                            <li>
+                                <a href='/logout' class="menu_link">ВЫХОД</a>
+                            </li>
+                        </ul>                                        
+                    </div>
+
+                    
+
+                </div>
+            {% endblock %}
+        </div>
+    </header>
+</div>

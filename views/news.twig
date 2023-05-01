@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <link rel='shortcut icon' href='/assets/pictures/icons/chest.png' type='image/x-icon'>
+
+
+    <link rel="stylesheet" href='/assets/styles/header.css'>
+    <link rel="stylesheet" href='/assets/styles/footer.css'>
+    <link rel="stylesheet" href='/assets/styles/news.css'>
+    <link rel='stylesheet' href='/assets/styles/fonts.css'>
+
+    <title>{{page_name}}</title>
+</head>
+
+<body>
+    {% include "blocks/header.twig" with  {
+        user: user
+    }
+    %}
+
+    <main>
+        <div class="page page-1">
+            <div class='page_1_content'>
+                <div class='last_news_container'>
+                    <h1 class="last_news_text">
+                        <nobr>ПОСЛЕДНИЕ НОВОСТИ</nobr>
+                    </h1>
+                </div>
+
+                <ul class="news">
+
+                {%
+                include "blocks/news_block.twig" with {
+                posts : {{posts}},
+                reversed: true,
+                pagination: {{pagination}}
+                }
+                %}       
+
+
+                {%
+                include "blocks/news_block.twig" with {
+                news_title: "Добавлен новый противник",
+                news_text: "короче ваще дикий чел, который надерёт вам жопу и вы пойдёте с агрессией, трясущимися
+                руками и скрипящими зубами плакаться мамочке",
+                news_date: "20 march 2077",
+                news_pict: "news.png",
+                reversed: false
+                }
+                %}
+
+                </ul>
+
+                <!-- кнопка будет появляться пока не дойдём до конца -->
+                {% if (pagination.current < pagination.paging) %}
+                    <!-- кнопка будет указывать на следующую страницу -->
+                    <a class="read_more_link" href="{{'news/pages/'~(pagination.current+1)}}">
+                        <div class="button_container">
+                            <img src='/assets/pictures/decor/pixelButton.png' alt=""></img>
+
+                            <div class="read_more_container">
+                                <p class="read_more_text">Ещё</p>
+                            </div>               
+                        </div>
+                    </a>
+                    {% else %}
+                    <div class="free_space"></div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    {% include "blocks/footer.twig" %}  
+
+    {% include "blocks/common_scripts.twig" %}
+ 
+</body>
+
+</html>

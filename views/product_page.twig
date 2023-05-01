@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <link rel='shortcut icon' href='/assets/pictures/icons/chest.png' type='image/x-icon'>
+
+
+    <link rel="stylesheet" href='/assets/styles/header.css'>
+
+
+    <link rel="stylesheet" href='/assets/styles/footer.css'>
+
+
+    <link rel="stylesheet" href='/assets/styles/product_page.css'>
+
+    <link rel='stylesheet' href='/assets/styles/fonts.css'>
+    <link rel="stylesheet" href='/assets/styles/heart_icon.css'>
+
+    <title>{{page_name}}</title>
+</head>
+
+<body>
+    {% include "blocks/shop_header.twig" with {
+        user: user
+    }
+    %}
+
+    <main>
+        <section>
+            <div class="page page-1">
+                
+                {% 
+                include "blocks/product.twig" with {
+                    product_title: product.title,
+                    product_price: product.price,
+                    product_description : product.content,
+                    product_features: product.features,
+                    product_pict: product.image_path,
+                    product_category: product.category,
+                }
+                %}
+                <div class="buy_btn_container">
+                    <button type="submit" class="buy_btn">Купить</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include "blocks/footer.twig" %}
+    {% include "blocks/common_scripts.twig" %}
+
+    
+    <script async
+        src="https://pay.google.com/gp/p/js/pay.js"
+        onload="onGooglePayLoaded()">
+    </script>
+    <script src="/assets/js/payment/google_pay.js"></script>
+    
+
+     <script src='/assets/js/payment/pay.js'></script>
+    <script src='/assets/js/busket_burger.js'></script>
+</body>
+
+</html>

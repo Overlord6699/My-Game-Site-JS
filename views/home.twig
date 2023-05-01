@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <base href="https://overlord6699.github.io/My-Game-Site"> -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel='shortcut icon' href='/assets/pictures/icons/chest.png' type='image/x-icon'>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> 
+
+    <link rel="stylesheet" href='../assets/styles/header.css'>
+    <link rel="stylesheet" href='../assets/styles/main.css'>
+    <link rel='stylesheet' href='../assets/styles/fonts.css'>
+    <link rel="stylesheet" href='../assets/styles/footer.css'>
+
+
+    <title>{{page_name}}</title>
+</head>
+
+<body>
+    {% include "blocks/header.twig" with {
+        user: user
+    }
+    %}
+
+    <main>
+        <section class='page page-1'>
+
+            <div class='game_name_container'>
+                <h1 class='game_name_text'>{{welcome_text}}</h1>
+            </div>
+
+            <img class='main_picture' src='/assets/pictures/MainPicture.png' alt="">
+        </section>
+
+        <section class='page page-2'>
+            <div class='page-2_content'>
+
+                <div class='about_game_start'>
+                    <img class='about_game_img' src='/assets/pictures/decor/about_game_left.png' alt="">
+
+                    <div class='about_game'>
+                        <h2>Об игре</h2>
+                    </div>
+
+                    <img class='about_game_img' src='/assets/pictures/decor/about_game_left.png' alt="">
+                </div>
+
+                <div class='about_game_text_container'>
+                    <h3 class='about_game_text'>
+                        {{about_game_text}}
+                    </h3>
+                </div>
+
+                {% include "blocks/home_section.twig" with {section_name: "Существа"} %}
+            </div>
+        </section>
+
+
+        <section class='page page-3'>
+            <div class='page-3_content'>
+                <div class='slider_content'>
+                    <!--слайдер-->
+                    <div class='image-slider swiper-container'>
+                        <div class='swiper-wrapper'>
+                         
+                            <!-- СЛАЙД СУЩЕСТВА №1 -->
+                            {%
+                            include 'slider/slider_slide.twig' with {
+                            enemy_pict: 'creatures/enemies/BotWheel.png',
+                            enemy_name: "Bot Wheel",
+                            enemy_description: "haha",
+                            enemy_gif1: 'BotWheel.gif',
+                            enemy_gif2: 'BotWheel.gif',
+                            enemy_gif3: 'BotWheel.gif'
+                            }
+                            %}
+                            
+
+                            <!-- СЛАЙД СУЩЕСТВА №2 -->
+                            {%
+                            include 'slider/slider_slide.twig' with {
+                            enemy_pict: 'creatures/enemies/AssaultDroid.png',
+                            enemy_name: "Assault Droid",
+                            enemy_description: "nice droid",
+                            enemy_gif1: 'BotWheel.gif',
+                            enemy_gif2: 'BotWheel.gif',
+                            enemy_gif3: 'BotWheel.gif'
+                            }
+                            %}
+
+
+                            <!-- СЛАЙД СУЩЕСТВА №3 -->
+                            {%
+                            include 'slider/slider_slide.twig' with {
+                            enemy_pict: 'creatures/enemies/Police.png',
+                            enemy_name: "Police",
+                            enemy_description: "виу виу виу",
+                            enemy_gif1: 'BotWheel.gif',
+                            enemy_gif2: 'BotWheel.gif',
+                            enemy_gif3: 'BotWheel.gif'
+                            }
+                            %}
+
+
+
+
+
+
+
+
+
+                        </div>
+
+
+                        {%
+                        include 'blocks/arrows.twig' with {
+                        left_arrow_pict: 'left_arrow.png',
+                        right_arrow_pict : 'right_arrow.png'
+                        }
+                        %}
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <section class='page page-4'>
+            <div class='page-4_content'>
+                {% include "blocks/home_section.twig" with {section_name: "Оружие"} %}
+
+
+                <div class='slider_content'>
+                    <!--слайдер-->
+                    <div class='image-slider swiper-container'>
+                        <div class='swiper-wrapper'>
+
+                            <!-- СЛАЙД ОРУЖИЯ №1 -->
+                            {%
+                            include 'slider/slider_simple_slide.twig' with {
+                            enemy_pict: 'weapon/GoldSword.png',
+                            enemy_name: "Illusion",
+                            enemy_description: "nice sword",
+                            }
+                            %}
+
+                            <!-- СЛАЙД ОРУЖИЯ №2 -->
+                            {%
+                            include 'slider/slider_simple_slide.twig' with {
+                            enemy_pict: 'weapon/BigBoy.png',
+                            enemy_name: "BIG BOY",
+                            enemy_description: "big sword",
+                            }
+                            %}
+
+
+                            <!-- СТРЕЛКИ -->
+                            {%
+                            include 'blocks/arrows.twig' with {
+                            left_arrow_pict : 'left_arrow.png',
+                            right_arrow_pict : 'right_arrow.png'
+                            }
+                            %}
+                        </div>
+                    </div>
+
+                </div>
+        </section>
+
+
+        <section class='page page-5'>
+            <div class='page-5_content'>
+
+                <img class='finish_line' src='/assets/pictures/decor/finish_line.png' alt="">
+
+                <div class='trailer_text_container'>
+                    <h5 class="trailer_text">Трейлер игры</h5>
+                </div>
+
+                <div class="video_container">
+                    <div class="video_preview active" id="preview1">
+                        <video class="" id="video1" src='/assets/video/trailer.webm' controls></video>
+                        
+                        <button type="button" onclick="video1Start()" class="video-play-button">
+                            <img src='/assets/pictures/icons/play_video_button.png' alt="">
+                        </button>
+
+                        <figure>
+                            <img src='/assets/pictures/trailer.jpg' alt="">
+                        </figure>
+                    </div>                   
+                </div>
+
+
+                <div class='portal_container'>
+                    <img class='portal_anim' src='/assets/pictures/gifs/portal.gif' alt="">
+
+
+                    <div class='play_button_container'>
+                        <input class='play_button_image' type='image'
+                            src='/assets/pictures/decor/button_game.png' alt="">
+                        <p class='play_button_text'>{{play_button_text}}</p>
+                    </div>
+                </div>
+
+                <div class='question_form_container'>
+                    <div class='question_text_content'>
+                        <p class='question_text'>Задать вопрос</p>
+                        <p class='question_info'>Заполните форму и мы свяжемся с Вами в ближайшее время</p>
+                    </div>
+
+                    <form id="form" action="#" class='question_form'>
+                        <div class="row_form">
+                            <input type='text' class="form_input _req" name='username' placeholder='Имя' required>
+
+                            <input type='email' class="form_input _req _email" name='email' placeholder='Email' required>
+
+                            <input class='button' type='submit' value='Отправить'>                           
+                        </div>
+
+                        <div class="checkbox_container">
+                            <input  checked id="agree" type="checkbox" class="_req" name="agreement">
+                            <label for="agree" class="checkbox_label">
+                                <span>
+                                    Я согласен на блаблабла...
+                                </span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include "blocks/footer.twig" %}
+
+    
+    
+
+    <script src='/assets/js/videoplayer.js'></script>
+    <script src='/assets/js/submit_form.js'></script>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src='/assets/js/slider/slider.js'></script>
+
+
+    {% include "blocks/common_scripts.twig" %}
+</body>
+
+</html>

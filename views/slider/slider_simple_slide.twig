@@ -1,0 +1,23 @@
+<div class='swiper-slide'>
+    <div class='enemy_card'>
+        <div class='enemy_info'>
+            {% block picture %}
+            <img class='weapon_slider_picture' src='/assets/pictures/{{enemy_pict}}' alt="">
+            {% endblock %}
+
+            {% block name %}
+            <div class='weapon_name'>
+                <h4 class='enemy_name_text'>{{enemy_name}}</h4>
+            </div>
+            {% endblock %}
+        </div>
+            {% block description %}
+            <div class='about_enemy'>
+                <h5 class='about_enemy_text'>{{enemy_description}}</h5>
+            </div>
+            {% endblock %}
+
+            {% block animations %}
+            {% endblock %}     
+    </div>
+</div>

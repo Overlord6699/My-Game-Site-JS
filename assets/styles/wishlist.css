@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+
+    background-image: url('../pictures/background/fon.png');
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-color: #000000;
+}
+
+
+.page {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.page-1 {
+    flex-direction: column;
+
+    align-items: center;
+    max-width: 1500px;
+}

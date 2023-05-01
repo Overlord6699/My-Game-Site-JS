@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.link {
+    position: absolute;
+}
+
+main {
+    background-image: url('../pictures/background/fon.png');
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-color: #000000;
+}
+
+
+.page {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.page-1 {
+    flex-direction: column;
+}
+
+.page-2 {
+    flex-direction: column;
+}
+
+.search_container {
+    display: flex;
+    justify-content: flex-start;
+
+    margin-top: 5%;
+    margin-left: 15%;
+
+    height: 5vh;
+    width: 47vmin;
+
+    background: #0F1113;
+    border: 2px solid violet;
+    opacity: 0.7;
+
+    cursor: text;
+}
+
+.search_container:hover {
+    opacity: 1;
+}
+
+.search_pict {
+    max-width: 40px;
+    align-self: center;
+    max-height: 40;
+    margin-left: 10px;
+}
+
+.search_text {
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+
+    font-family: 'Pixeloid Mono';
+    font-style: normal;
+    font-weight: 900;
+    font-size: calc(8px + 18*(100vw/1960));
+    line-height: 110%;
+    letter-spacing: 0.15em;
+
+    color: #97A0A0;
+    background: #0F1113;
+
+    border: none;
+}
+
+.search_text:focus {
+    outline: none;
+}
+
+.section_container {
+    margin-top: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section_name {
+    font-family: 'Pixeloid Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 62px;
+    letter-spacing: 0.19em;
+
+    color: #97A0A0;
+}
+
+
+.section_underline {
+    position: relative;
+    background-color: #BDD1D1;
+    height: 6px;
+    width: 30%;
+    bottom: -10px;
+    left: 0;
+
+}
+
+.shop_card {
+    display: flex;
+
+    max-width: 349px;
+    max-height: 390px;
+
+    margin: 2vmax;
+}
+
+.card_border {
+    object-fit: cover;
+
+    width: 100%;
+    height: 100%;
+}
+
+.borders {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    list-style: none;
+
+    margin-top: 25px;
+    margin-left: 25px;
+    gap: 290px;
+}
+
+.borders_group {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 249px;
+}
+
+.border {
+    width: 25px;
+    height: 25px;
+
+    background-color: #444572;
+}
+
+.card_info {
+    display: flex;
+    position: absolute;
+
+    align-items: center;
+
+    margin-top: 65px;
+    margin-left: 68px;
+
+    max-width: 212px;
+    max-height: 258px;
+    width: 212px;
+    height: 258px;
+}
+
+.card_info:hover .scalable_pict {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.card_info:hover .back_pict_hover {
+    opacity: 1;
+}
+
+.back_picture {
+    display: flex;
+    max-width: 212px;
+    max-height: 258px;
+    width: 212px;
+    height: 258px;
+
+    background: linear-gradient(115.7deg, #2B5876 10.42%, #4E4376 82.77%);
+
+    opacity: 0.8;
+}
+
+.back_volume_picture {
+    display: flex;
+    max-width: 212px;
+    max-height: 258px;
+    width: 212px;
+    height: 258px;
+
+    background: none;
+    opacity: 0.8;
+}
+
+.card_text_container {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 212px;
+    max-height: 74px;
+    width: 212px;
+    height: 74px;
+
+    background-color: #23252B;
+}
+
+.card_volume_text_container {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*для балансировки по центру*/
+    right: -34px;
+
+    max-width: 280px;
+    max-height: 50px;
+    width: 280px;
+    height: 50px;
+
+    background-color: #23252B;
+}
+
+
+.card_text {
+    text-align: center;
+
+    width: 100%;
+
+    font-family: 'Pixeloid Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(14px + 10*(100vw/1960));
+    line-height: 110%;
+    letter-spacing: 0.19em;
+
+    color: #BDD1D1;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin-top: 8%;
+}
+
+.products li {
+    display: inline-block;
+
+    list-style-type: none;
+    flex-direction: row;
+}
+
+.product_pict_container {
+    display: flex;
+    position: absolute;
+    top: 0px;
+
+
+    max-height: 184px;
+    max-width: 212px;
+    height: 184px;
+    width: 212px;
+}
+
+.product_volume_container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+
+    max-height: 184px;
+    max-width: 340px;
+    height: 184px;
+    width: 340px;
+    right: -70px;
+}
+
+.product_picture {
+    max-height: 184px;
+    max-width: 212px;
+
+    object-fit: contain;
+    transition: 0.5s ease 0s;
+}
+
+.card_category {
+    display: none;
+}
+
+.product_volume_picture {
+    max-height: 158px;
+    max-width: 340px;
+    height: 158px;
+    width: 340px;
+
+    object-fit: contain;
+
+    transform: rotate(10deg);
+    transition: 0.5s ease 0s;
+}
+
+@media(max-width:540px) {
+
+    /* всё для карточки */
+    /*в 2 раза меньше*/
+    .shop_card {
+        max-width: 175px;
+        max-height: 195px;
+    }
+
+    .card_info {
+        max-width: 106px;
+        max-height: 129px;
+
+        margin-top: 32px;
+        margin-left: 34px;
+    }
+
+    .borders {
+        margin-top: 13px;
+        margin-left: 13px;
+        gap: 145px;
+    }
+
+    .borders_group {
+        gap: 125px;
+    }
+
+    .border {
+        max-width: 13px;
+        max-height: 13px;
+
+        background-color: #be52ef;
+    }
+
+    .resizeful_back_pict {
+        max-width: 106px;
+        max-height: 129px;
+    }
+
+    .product_pict_container {
+        max-height: 92px;
+        max-width: 106px;
+    }
+
+    .product_volume_container {
+        max-width: 170px;
+        max-height: 92px;
+    }
+
+    .product_picture {
+        max-width: 106px;
+        max-height: 92px;
+    }
+
+    .product_volume_picture {
+        max-height: 79px;
+        max-width: 170px;
+
+        margin-right: 70px;
+    }
+
+    .card_text_container {
+        max-width: 106px;
+        max-height: 37px;
+    }
+
+    .card_volume_text_container {
+        max-width: 140px;
+        max-height: 25px;
+
+        right: -17px;
+    }
+
+    .card_text {
+        font-size: 14px;
+    }
+
+    /* Конец карточки */
+
+    .section_name {
+        font-size: 25px;
+    }
+
+    .search_pict {
+        max-width: 20px;
+        max-height: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+.hidden {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.page-small {
+    min-height: 0%;
+}

@@ -1,0 +1,25 @@
+{% extends "blocks/shop_card.twig" %}
+
+
+{% block borders %}
+{{parent()}}
+{% endblock %}
+
+
+{% block back_pict %}
+<img class='back_volume_picture back_pict_hover resizeful_back_pict'
+    src='/assets/pictures/shop/card/weapon_back.png' alt=""></img>
+{% endblock %}
+
+{% block card_picture %}
+<div class='product_volume_container'>
+    <img class='product_volume_picture scalable_pict' src="/assets/pictures/shop/{{card_category}}/{{card_pict}}"
+        alt=""></img>
+</div>
+{% endblock %}
+
+{% block card_text %}
+<figcaption class='card_volume_text_container'>
+    <p class='card_text'>{{card_name}}</p>
+</figcaption>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% for post in posts %}
+
+{% if reversed %}
+
+<a href={{"/news/"~(post.url_key)}} class="post_link">
+    <div class='news_container reversed'>
+
+        {% if post.image_path is not null %}
+            <figure class='news_picture_container'>
+                <img class='news_picture' src="/assets/pictures/news/{{post.image_path|raw}}" alt="{{post.title}}"></img>
+            </figure>
+        {% endif %}
+
+        <figcaption class="news_text_container">
+            <div class='news_name_container'>
+                <h2 class="news_name">{{post.title|escape}}</h2>
+            </div>
+
+
+            <div class="news_description_container">
+                <p class="news_description_text">
+                    {{post.content}}
+                </p>
+            </div>
+
+            <div class="news_date_container">
+                <p class='news_date_text'>{{post.published_date}}</p>
+            </div>
+        </figcaption>
+    </div>
+</a>
+
+<div class="section_underline">
+</div>
+
+{% else %}
+
+<a href={{"/news/"~(post.url_key)}} class="post_link">
+    <div class='news_container'>
+
+        {% if post.image_path is not null %}
+            <figure class='news_picture_container'>
+                <img class='news_picture' src="/assets/pictures/news/{{post.image_path|raw}}" alt="{{post.title}}"></img>
+            </figure>
+        {% endif %}
+
+        <figcaption class="news_text_container">
+            <div class='news_name_container'>
+                <h2 class="news_name">{{post.title|escape}}</h2>
+            </div>
+
+
+            <div class="news_description_container">
+                <p class="news_description_text">
+                    {{post.content}}
+                </p>
+            </div>
+
+            <div class="news_date_container">
+                <p class='news_date_text'>{{post.published_date}}</p>
+            </div>
+        </figcaption>
+    </div>
+</a>
+
+<div class="section_underline">
+</div>
+
+{% endif %}
+
+{% endfor %}

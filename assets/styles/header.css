@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.left_header {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 90px;
+}
+
+.navbar {
+    max-width: 100%;
+    max-height: 60px;
+    background-color: #171717;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_icon {
+    position: relative;
+    width: 91px;
+    height: 54px;
+    left: 30px;
+    top: 0px;
+}
+
+.nav_icon_login {
+    width: 100%;
+    display: block;
+
+    /*изменить*/
+    max-width: 50px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.nav_icon_login.active {
+    border: 2px solid rgba(230, 19, 19, 0.82);
+}
+
+.login_link {
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+
+    width: 4vmax;
+
+    margin-top: 0.3%;
+    margin-right: 1%;
+}
+
+.menu {
+    position: relative;
+    display: flex;
+    list-style: url('../pictures/icons/aim.png');
+    list-style-position: inside;
+}
+
+.menu li {
+    position: relative;
+    padding: 20px;
+    max-width: 100%;
+}
+
+.menu li a {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    line-height: 1em;
+    letter-spacing: 2px;
+    font-size: 120%;
+
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(73, 70, 243, 0.602);
+}
+
+/* анимация */
+.menu li a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: #fff;
+    width: 0%;
+    overflow: hidden;
+    transition: 1s;
+
+}
+
+.menu li::after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    height: 3px;
+    width: 0%;
+    bottom: 0px;
+    left: 0;
+
+    transition: 0.3s;
+}
+
+.menu li:hover:after {
+    width: 100%;
+}
+
+.menu li a:hover:before {
+    width: 100%;
+    -webkit-text-stroke: 1px solid #fff;
+}
+
+.menu li.selected_line::after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+}
+
+.menu li ul {
+    display: none;
+}
+
+.menu li:hover ul {
+    display: block;
+    position: absolute;
+}
+
+.menu li.selected {
+    max-height: 60px;
+
+    background-color: #363646;
+}
+
+.menu_list {
+    position: relative;
+
+    width: 100%;
+    top: -500%;
+
+    list-style: none;
+
+    transition: all 0.5s ease 0s;
+    z-index: 10;
+}
+
+.menu_list.active {
+    display: block;
+    top: 60px;
+}
+
+
+.menu_list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5vmin;
+    width: 16vmax;
+
+    margin-bottom: 10px;
+
+    background-color: #191c1c;
+}
+
+.menu_list li a {
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    font-family: 'Pixeloid Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(12px + 10*(100vw/1960));
+    line-height: 110%;
+
+    color: #97A0A0;
+
+    text-decoration: none;
+}
+
+.menu_list li a:hover {
+    color: #ffffff;
+}
+
+
+
+
+.menu_link {
+    color: #fff;
+}
+
+.entry_icon_burger {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.right_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_icon_login:hover .menu_list {
+    display: block;
+}
+
+.header_burger {
+    cursor: pointer;
+    display: none;
+    right: 50px;
+
+    margin-right: 10px;
+    margin-top: 10px;
+
+    z-index: 100;
+}
+
+.busket_container {
+    position: relative;
+
+    width: 4vh;
+    height: 4vh;
+
+    right: -25%;
+    margin: auto;
+
+    cursor: pointer;
+}
+
+.busket_container.active {}
+
+.busket_products {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    top: -5000%;
+
+    list-style: none;
+    background-color: #090530;
+
+    transition: all 0.5s ease 0s;
+    z-index: 10;
+}
+
+.busket_products.active {
+    display: block;
+    top: 60px;
+}
+
+.busket_picture {
+    max-width: 4vh;
+}
+
+body .lock {
+    overflow: hidden;
+}
+
+@media(max-width:820px) {
+
+    /* бургер */
+    .menu_container {
+        position: fixed;
+
+        top: -100%;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: rgb(79, 36, 94);
+
+        transition: all 0.5s ease 0s;
+        overflow: auto;
+    }
+
+    .menu_container.active {
+        top: 0;
+        z-index: 10;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .header_burger {
+        display: block;
+        position: absolute;
+
+        width: 20px;
+        height: 22px;
+    }
+
+    .header_burger span {
+        position: absolute;
+
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 10px;
+
+        transition: all 0.3s ease 0s;
+        background-color: #fff;
+    }
+
+    .header_burger:before,
+    .header_burger:after {
+        position: absolute;
+        content: "";
+
+        width: 100%;
+        height: 2px;
+        left: 0;
+
+        transition: all 0.3s ease 0s;
+        background-color: #fff;
+    }
+
+    .header_burger::before {
+        top: 0;
+    }
+
+    .header_burger::after {
+        bottom: 0;
+    }
+
+    .header_burger.active {
+        animation: spin 1s linear 0s;
+    }
+
+    .header_burger.active::before {
+        transform: rotate(45deg);
+        top: 10px;
+    }
+
+    .header_burger.active::after {
+        transform: rotate(-45deg);
+        bottom: 10px;
+    }
+
+    .header_burger.active span {
+        transform: scale(0);
+    }
+
+    /* -бургер- */
+
+    .menu li a:before {
+        top: 1px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        max-height: 40px;
+        height: 40px;
+    }
+
+    .menu_list.active {
+        top: 40px;
+    }
+
+    .busket_products.active {
+        top: 40px;
+    }
+
+    .nav_icon {
+        height: 40px;
+        max-width: 70px;
+    }
+
+    .nav_icon_login {
+        max-width: 35px;
+    }
+}
+
+
+
+@media (max-width: 640px) {
+    .menu li a {
+        font-size: 100%;
+    }
+
+    .section {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 514px) {
+    .menu li a {
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 470px) {
+    .menu li a {
+        font-size: 80%;
+    }
+
+    .menu li.selected {
+        max-height: 0px;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(1080deg);
+    }
+}
